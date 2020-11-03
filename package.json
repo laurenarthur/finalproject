@@ -4,7 +4,7 @@
   "description": "Server-Side Web Dev Final Project",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,10 +18,11 @@
   },
   "homepage": "https://github.com/laurenarthur/finalproject#readme",
   "engines": {
-      "node": "12.x"
+    "node": "12.x"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
     "express": "^4.17.1"
   }
 }
