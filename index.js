@@ -10,12 +10,27 @@ var app = express();
 //port information
 const port = process.env.PORT || 3000;
 
-//ue EJS for templates 
+//use EJS for templates 
 app.set('view engine','ejs');
 
-//get home page
+//home page
 app.get('/',function(req,res){
-    res.send('Hello, this will be our project.')
+    res.render('index');
+});
+
+//contact page 
+app.get('/contact',function(req,res){
+    res.render('contact');
+});
+
+//movie api page
+app.get('/Movie', function(req,res){
+    res.render('Movie');
+});
+
+//tv-show api page
+app.get('/TV', function(req,res){
+    res.render('TV');
 });
 
 app.listen(port,function(){
