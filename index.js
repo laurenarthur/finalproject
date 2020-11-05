@@ -13,6 +13,9 @@ const port = process.env.PORT || 3000;
 //use EJS for templates 
 app.set('view engine','ejs');
 
+//make styles public
+app.use(express.static("public"));
+
 //home page
 app.get('/',function(req,res){
     res.render('index');
