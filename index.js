@@ -18,7 +18,8 @@ app.set('view engine','ejs');
 
 //make styles public
 app.use(express.static("public"));
-
+app.use(bodyParser.urlencoded({extended: true}));
+var search = "big";
 //home page
 app.get('/',function(req,res){
     res.render('index');
@@ -31,21 +32,19 @@ app.get('/contact',function(req,res){
 
 //movie api page
 app.get('/Movie', function(req,res){
-    //var result = null;
-    fetch('https://api.themoviedb.org/3/search/movie?api_key=2cb9d256f4796cfd3b7c89a3324b4356&language=en-US&query=big&page=1&include_adult=false')
+    fetch('https://api.themoviedb.org/3/search/movie?api_key=2cb9d256f4796cfd3b7c89a3324b4356&language=en-US&query='+search+'&page=1&include_adult=false')
     .then(res => res.json())
     .then(result => {
-        res.render('Movie',{result:result});
+        console.log("hi");
+        console.log(result);
+        console.log(search);
+        res.render('Movie',{result:result, search:search});
     });
 });
 
-app.get('/searchMovie', function(req,res){
-    //var search = req.body.movieSearch;
-    fetch('https://api.themoviedb.org/3/search/movie?api_key=2cb9d256f4796cfd3b7c89a3324b4356&language=en-US&query=big&page=1&include_adult=false')
-    .then(res => res.json())
-    .then(result => {
-        res.render('Movie',{result:result});
-    });
+app.post('/searchMovie', function(req,res){
+    search = req.body.movieSearch;
+    res.redirect('/Movie');
 });
 
 //tv-show api page

@@ -41,18 +41,22 @@
             <p class="lead">Movie Search Page</p>
             <hr class="my-4">
             <p><div class="input-group mb-3">
-                    <form action ="/searchMovie" method="GET">
-                    <input type="text" class="form-control" placeholder="Search Movie" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <form action ="/searchMovie" method="POST">
+                    <input type="text" class="form-control" name="movieSearch" placeholder="Search Movie" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" formaction="/searchMovie" type="submit" id="button-addon2">Search</button>
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
                     </div>
                     </form>
                 </div>
             </p> 
         </div>
         <div>
-            <p><%= result.title %></p>
-            <p><%= result.overview %></p>
+        <p> Showing search results for: <%= search %></p>
+        <% for( var i=0; i < result.length; i++){ %>
+   
+            <li><%= result[i].title %></li>
+
+        <% } %>
             <!-- <img src="https://image.tmdb.org/t/p/w116_and_h174_face/ydpl7tqYyYFhCIJpslbvlUpVdc9.jpg"+"<%= result.poster_path %>" alt="Movie Poster" width="500" height="600">-->
         </div>
 
