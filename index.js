@@ -35,7 +35,7 @@ app.get('/Movie', function(req,res){
     fetch('https://api.themoviedb.org/3/search/movie?api_key=2cb9d256f4796cfd3b7c89a3324b4356&language=en-US&query=big&page=1&include_adult=false')
     .then(res => res.json())
     .then(result => {
-        res.render('nasa',{result:result});
+        res.render('Movie',{result:result});
     });
 });
 
@@ -44,7 +44,7 @@ app.get('/searchMovie', function(req,res){
     fetch('https://api.themoviedb.org/3/search/movie?api_key=2cb9d256f4796cfd3b7c89a3324b4356&language=en-US&query=big&page=1&include_adult=false')
     .then(res => res.json())
     .then(result => {
-        res.render('nasa',{result:result});
+        res.render('Movie',{result:result});
     });
 });
 
