@@ -31,7 +31,8 @@ app.get('/contact',function(req,res){
 
 //movie api page
 app.get('/Movie', function(req,res){
-    res.render('Movie');
+    var result = null;
+    res.render('Movie', {result:result});
 });
 
 app.get('/searchMovie', function(req,res){
