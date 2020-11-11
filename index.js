@@ -37,6 +37,7 @@ app.get('/Movie', function(req,res){
     var result = call;
     res.render('Movie', {result:result});
 });
+});
 
 app.get('/searchMovie', function(req,res){
     //var search = req.body.movieSearch;
