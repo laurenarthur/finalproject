@@ -49,7 +49,6 @@ app.post('/searchMovie', function(req,res){
 
 //tv-show api page
 app.get('/TV', function(req,res){
-    //need to fetch the query that they searched 
     
     res.render('TV');
 });
