@@ -27,7 +27,7 @@
                         <a class="nav-link" href="/Movie">Movies<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/TV">Tv-Shows</a>
+                        <a class="nav-link" href="/TV">TV Shows</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact</a>
@@ -37,12 +37,11 @@
         </nav>
 
         <div class="jumbotron">
-            <h1 class="display-4">The Movie Guru</h1>
+            <h1 class="display-4">Movies</h1>
             <p class="lead">Movie Search Page</p>
-            <hr class="my-4">
             <p><div class="input-group mb-3">
                     <form action ="/searchMovie" method="POST">
-                    <input type="text" class="form-control" name="movieSearch" placeholder="Search Movie" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <input type="text" class="form-control" name="movieSearch" placeholder="Search for a Movie" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
                     </div>
@@ -50,9 +49,9 @@
                 </div>
             </p> 
         </div>
-        
-        <div>
-        <p> Showing search results for: <%= search %></p>
+        <hr class="my-4">
+        <div class="searchResult">
+        <h2> Showing search results for: <%= search %></h2>
         <% for( var i=0; i < result.length; i++){ %>
             <img src="https://image.tmdb.org/t/p/w116_and_h174_face/<%=result[i].poster_path %>" alt="Movie Poster" width="100" height="170">
             <ul><%= result[i].title %></ul>
