@@ -20,6 +20,7 @@ app.set('view engine','ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 var search = "big";
+var searchtv = "big";
 //home page
 app.get('/',function(req,res){
     res.render('index');
@@ -54,13 +55,13 @@ app.get('/TV', function(req,res){
     .then(data => {
         result = data.results;
         console.log(result);
-        console.log(search);
-        res.render('TV',{result:result, search:search});
+        console.log(searchtv);
+        res.render('TV',{result:result, searchtv:searchtv});
     });
 });
 
 app.post('/TVsearch', function(req,res){
-    search = req.body.movieSearch;
+   searchtv = req.body.movieSearch;
     res.redirect('/TV');
 });
 
