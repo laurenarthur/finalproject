@@ -9,7 +9,8 @@ html
     background-image: url("/projector.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
+    background-attachment: fixed;
 }
 body{text-align:left;}
 
