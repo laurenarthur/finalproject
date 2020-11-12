@@ -12,20 +12,23 @@ html
     background-size: cover;
     background-attachment: fixed;
 }
+
 body{text-align:left;}
 
-h1, h2, h3, h4, nav {font-family: "Arial", sans-serif; padding-bottom: .5em;}
+h1, h2, h3, h4, nav
+{
+    font-family: "Arial", sans-serif;
+    padding-bottom: .5em;
+}
+
 h1, h2
 {
     color: rgb(201, 130, 110);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-p
-{
-    padding: .5em, 0;
-}
-
+p {padding: .5em, 0;}
+a {color: rgb(201, 130, 110);}
 
 .jumbotron
 {
@@ -43,6 +46,9 @@ p
 
 .searchResult, #aboutInfo {margin: 2em;}
 #aboutInfo dt {font-size: large;}
-#aboutInfo dd {padding-left: 1em; text-indent: 2em;}
 
-
+#aboutInfo dd
+{
+    padding-left: 1em;
+    text-indent: 2em;
+}
