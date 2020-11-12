@@ -40,7 +40,8 @@
             <p class="lead">Tv-Show Search Page</p>
             <hr class="my-4">
             <p><div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search Tv-Show" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <form action ="/TVsearch" method="POST"> 
+                    <input type="text" class="form-control" name="TVsearch" placeholder="Search Tv-Show" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
                     </div>
@@ -48,9 +49,17 @@
             </p>
         </div>
 
-        <div class="results">
-
+        <div>
+        <p> Showing search results for: <%= search %></p>
+        <% for( var i=0; i < result.length; i++){ %>
+            <img src="https://image.tmdb.org/t/p/w116_and_h174_face/<%=result[i].poster_path %>" alt="TV" Poster" width="100" height="170">
+            <ul><%= result[i].title %></ul>
+            <p><%= result[i].overview %></p>
+            <hr class="my-4">
+        <% } %>
+            
         </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

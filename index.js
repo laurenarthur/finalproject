@@ -50,8 +50,20 @@ app.post('/searchMovie', function(req,res){
 
 //tv-show api page
 app.get('/TV', function(req,res){
-    
-    res.render('TV');
+    fetch('https://api.themoviedb.org/3/search/tv?api_key=2cb9d256f4796cfd3b7c89a3324b4356&language=en-US&query='+search+'&page=1&include_adult=false')
+    .then(res => res.json())
+    .then(data => {
+        result = data.results;
+        console.log("hi tv");
+        console.log(result);
+        console.log(search);
+        res.render('TV',{result:result, search:search});
+    });
+});
+
+app.post('/TVsearch', function(req,res){
+    search = req.body.movieSearch;
+    res.redirect('/TV');
 });
 
 app.listen(port,function(){
