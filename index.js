@@ -36,7 +36,6 @@ app.get('/Movie', function(req,res){
     .then(res => res.json())
     .then(data => {
         result = data.results;
-        console.log("hi");
         console.log(result);
         console.log(search);
         res.render('Movie',{result:result, search:search});
@@ -54,7 +53,6 @@ app.get('/TV', function(req,res){
     .then(res => res.json())
     .then(data => {
         result = data.results;
-        console.log("hi tv");
         console.log(result);
         console.log(search);
         res.render('TV',{result:result, search:search});
