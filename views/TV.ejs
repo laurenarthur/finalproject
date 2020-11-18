@@ -42,7 +42,7 @@
                     <form action ="/TVsearch" method="POST"> 
                     <input type="text" class="form-control" name="TVsearch" placeholder="Search for a TV Show" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
                     </div>
                 </div>
             </p>
@@ -50,13 +50,15 @@
         <hr class="my-4">
 
         <div class="searchResult">
+        <%if(searchtv != ""){%>
         <h2> Showing search results for: <%= searchtv %></h2>
         <% for( var i=0; i < result.length; i++){ %>
             <img src="https://image.tmdb.org/t/p/w116_and_h174_face/<%=result[i].poster_path %>" alt="TV" Poster" width="100" height="170">
-            <ul><%= result[i].title %></ul>
+            <p><%= result[i].title %></p>
+            <p><strong>Rating:</strong> <%= result[i].vote_average %></p>
             <p><%= result[i].overview %></p>
             <hr class="my-4">
-        <% } %>
+        <% }} %>
             
         </div>
 

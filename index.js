@@ -19,8 +19,8 @@ app.set('view engine','ejs');
 //make styles public
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
-var search = "big";
-var searchtv = "big";
+var search = "";
+var searchtv = "";
 //home page
 app.get('/',function(req,res){
     res.render('index');
@@ -33,6 +33,7 @@ app.get('/contact',function(req,res){
 
 //movie api page
 app.get('/Movie', function(req,res){
+    if(search != ""){
     fetch('https://api.themoviedb.org/3/search/movie?api_key=2cb9d256f4796cfd3b7c89a3324b4356&language=en-US&query='+search+'&page=1&include_adult=false')
     .then(res => res.json())
     .then(data => {
@@ -41,6 +42,10 @@ app.get('/Movie', function(req,res){
         console.log(search);
         res.render('Movie',{result:result, search:search});
     });
+}
+else{
+    res.render('Movie',{search:search});
+}
 });
 
 app.post('/searchMovie', function(req,res){

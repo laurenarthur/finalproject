@@ -51,13 +51,15 @@
         </div>
         <hr class="my-4">
         <div class="searchResult">
+        <%if(search != ""){%>
         <h2> Showing search results for: <%= search %></h2>
         <% for( var i=0; i < result.length; i++){ %>
             <img src="https://image.tmdb.org/t/p/w116_and_h174_face/<%=result[i].poster_path %>" alt="Movie Poster" width="100" height="170">
-            <ul><%= result[i].title %></ul>
+            <p><%= result[i].title %></p>
+            <p><strong>Rating:</strong> <%= result[i].vote_average %></p>
             <p><%= result[i].overview %></p>
             <hr class="my-4">
-        <% } %>
+        <% } }%>
             
         </div>
 
