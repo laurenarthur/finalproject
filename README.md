@@ -6,4 +6,4 @@
 [TheMovieGuru](https://themovieguru1.herokuapp.com)
 
 **API Link**
-[TheMovieDB]("https://www.themoviedb.org/documentation/api)
+[TheMovieDB](https://www.themoviedb.org/documentation/api)
