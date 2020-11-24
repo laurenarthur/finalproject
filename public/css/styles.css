@@ -52,3 +52,13 @@ a {color: rgb(201, 130, 110);}
     padding-left: 1em;
     text-indent: 2em;
 }
+
+h3 {margin-top: .5em;}
+.card
+{
+    width: 22em;
+    padding: 1em;
+    margin: .5em;
+    border-radius: 25px;
+    border: 2px solid tan;
+}

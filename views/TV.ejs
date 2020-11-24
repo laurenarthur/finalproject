@@ -52,14 +52,22 @@
         <div class="searchResult">
         <%if(searchtv != ""){%>
         <h2> Showing search results for: <%= searchtv %></h2>
+        <div class="d-flex justify-content-center flex-wrap">
         <% for( var i=0; i < result.length; i++){ %>
+            <div class=card>
+            <% if (result[i].poster_path != null) { %>
             <img src="https://image.tmdb.org/t/p/w116_and_h174_face/<%=result[i].poster_path %>" alt="TV" Poster" width="100" height="170">
-            <p><%= result[i].title %></p>
+            <% } %>
+            <h3>
+                <%= result[i].name %>
+                <% if (result[i].first_air_date != null && result[i].first_air_date != '') {%>
+                (<%= result[i].first_air_date.substring(0,4)%>)<%}%>
+            </h3>
             <p><strong>Rating:</strong> <%= result[i].vote_average %></p>
             <p><%= result[i].overview %></p>
-            <hr class="my-4">
+            </div>
         <% }} %>
-            
+        </div>
         </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
