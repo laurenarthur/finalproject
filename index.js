@@ -38,9 +38,7 @@ app.get('/contact',function(req,res){
 app.post('/contact', (req, res)=> {
     //intall the SMTP server
     const smtpTrans = nodemailer.createTransport({
-        service: 'gmail',
-        port: 465,
-        secure: true,
+        service: 'Gmail',
         auth:{
             user: 'lauern.arthur123@gmail.com',
             pass: 'lpa12321'
@@ -48,7 +46,7 @@ app.post('/contact', (req, res)=> {
     })
     //specify what the email will look like
     const mailOpts={
-        from: "Your sender infor here", 
+        from: "lauern.arthur123@gmail.com", 
         to: 'lauern.arthur123@gmail.com',
         subject: 'New message from contact form at movieguru',
         text: '&{req.body.email} says: ${req.body.message}'
