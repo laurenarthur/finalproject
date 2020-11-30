@@ -16,6 +16,9 @@ const port = process.env.PORT || 3000;
 //use EJS for templates 
 app.set('view engine','ejs');
 
+//nodemailer
+const nodemailer = require('nodemailer');
+
 //make styles public
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -30,6 +33,37 @@ app.get('/',function(req,res){
 app.get('/contact',function(req,res){
     res.render('contact');
 });
+
+//POST route from contact form 
+app.post('/contact', (req, res)=> {
+    //intall the SMTP server
+    const smtpTrans = nodemailer.createTransport({
+        host: 'smpt.gmail.com',
+        port: 465,
+        secure: true,
+        auth:{
+            user: 'lauern.arthur123@gmail.com',
+            pass: 'lpa12321'
+        }
+    })
+    //specify what the email will look like
+    const mailOpts={
+        from: "Your sender infor here", 
+        to: 'lauern.arthur123@gmail.com',
+        subject: 'New message from contact form at movieguru',
+        text: '&{req.body.email} says: ${req.body.message}'
+    }
+
+    smtpTrans.sendMail(mailOpts, function (err, res) {
+        if(err){
+            console.error('there was an error: ', err);
+        }
+        else{
+            console.log('here is the res: ', res);
+        }
+    })
+})
+
 
 //movie api page
 app.get('/Movie', function(req,res){
