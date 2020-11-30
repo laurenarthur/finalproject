@@ -38,7 +38,7 @@ app.get('/contact',function(req,res){
 app.post('/contact', (req, res)=> {
     //intall the SMTP server
     const smtpTrans = nodemailer.createTransport({
-        host: 'smpt.gmail.com',
+        service: 'gmail',
         port: 465,
         secure: true,
         auth:{
