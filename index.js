@@ -40,14 +40,14 @@ app.post('/contact', (req, res)=> {
     const smtpTrans = nodemailer.createTransport({
         service: 'Gmail',
         auth:{
-            user: 'lauern.arthur123@gmail.com',
-            pass: 'lpa12321'
+            user: 'serversidemail2020@gmail.com', //I created this email for this project specifically, still not getting anything
+            pass: 'webdev2020'
         }
     })
     //specify what the email will look like
     const mailOpts={
-        from: "lauern.arthur123@gmail.com", 
-        to: 'lauern.arthur123@gmail.com',
+        from: "serversidemail2020@gmail.com", 
+        to: 'serversidemail2020@gmail.com',
         subject: 'New message from contact form at movieguru',
         text: '&{req.body.email} says: ${req.body.message}'
     }
