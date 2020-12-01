@@ -50,7 +50,11 @@
                         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
         </div>
         <%if(sent){%>
-            <p class='sentMessage'>Thank you! Message sent successfully!</p>
+        <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <p class='sentMessage'>Thank you! Message sent successfully!</p>
+        </div>
+            <%sent = false;%>
         <%  }%>
 
         <hr class="my-4">
