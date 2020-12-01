@@ -33,6 +33,7 @@ app.get('/',function(req,res){
 //contact page 
 app.get('/contact',function(req,res){
     res.render('contact', {sent:sent});
+    sent = false;
 });
 
 //POST route from contact form 
