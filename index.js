@@ -65,9 +65,10 @@ app.post('/contacts', (req, res)=> {
         else{
             console.log('here is the res: ', res);
             sent = true;
+            res.redirect('/contact');
         }
     })
-    res.redirect('/contact');
+    
 })
 
 
