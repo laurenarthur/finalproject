@@ -24,6 +24,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 var search = "";
 var searchtv = "";
+var sent = false;
 //home page
 app.get('/',function(req,res){
     res.render('index');
@@ -31,7 +32,7 @@ app.get('/',function(req,res){
 
 //contact page 
 app.get('/contact',function(req,res){
-    res.render('contact');
+    res.render('contact', {sent:sent});
 });
 
 //POST route from contact form 
@@ -63,6 +64,7 @@ app.post('/contacts', (req, res)=> {
         }
         else{
             console.log('here is the res: ', res);
+            sent = true;
         }
     })
     res.redirect('/contact');
