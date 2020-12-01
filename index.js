@@ -35,21 +35,26 @@ app.get('/contact',function(req,res){
 });
 
 //POST route from contact form 
-app.post('/mail', (req, res)=> {
+app.post('/contact', (req, res)=> {
     //intall the SMTP server
     const smtpTrans = nodemailer.createTransport({
         service: 'Gmail',
         auth:{
             user: 'serversidemail2020@gmail.com', //I created this email for this project specifically, still not getting anything
             pass: 'webdev2020'
+        },
+        tls: {
+            rejectUnauthorized: false
         }
     })
+    var user = req.body.email;
+    var message = req.body.message;
     //specify what the email will look like
     const mailOpts={
-        from: "serversidemail2020@gmail.com", 
+        from: user, 
         to: 'serversidemail2020@gmail.com',
         subject: 'New message from contact form at movieguru',
-        text: '&{req.body.email} says: ${req.body.message}'
+        text: user + ' says:' +message
     }
 
     smtpTrans.sendMail(mailOpts, function (err, res) {
