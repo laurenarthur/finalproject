@@ -35,7 +35,7 @@ app.get('/contact',function(req,res){
 });
 
 //POST route from contact form 
-app.post('/contact', (req, res)=> {
+app.post('/contacts', (req, res)=> {
     //intall the SMTP server
     const smtpTrans = nodemailer.createTransport({
         service: 'Gmail',
@@ -65,6 +65,7 @@ app.post('/contact', (req, res)=> {
             console.log('here is the res: ', res);
         }
     })
+    res.redirect('/contact');
 })
 
 
