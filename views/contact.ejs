@@ -37,17 +37,17 @@
 
         <div class="jumbotron">
             <h1 class="display-4">Contact</h1>
-                <p class="lead">Please fill out the form below to contact us.</p>
-                    <form id="contact-form" role="form" method="post" action="/contacts">
-                     <div class="form-group">
-                         <label for="">Email address:</label>
-                         <input name="email" type="email" class="form-control" id="input1" placeholder="name@example.com">
-                     </div>
-                     <div class="form-group">
-                        <label for="">Message:</label>
-                        <textarea name="message" class="form-control" id="input2" rows="3"></textarea>
-                    </div>
-                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            <p class="lead">Please fill out the form below to contact us.</p>
+            <form id="contact-form" role="form" method="post" action="/contacts">
+            <div class="form-group">
+                    <label for="">Email address:</label>
+                    <input name="email" type="email" class="form-control" id="input1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="">Message:</label>
+                <textarea name="message" class="form-control" id="input2" rows="3"></textarea>
+            </div>
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
         </div>
         <%if(sent){%>
         <div class="alert alert-success alert-dismissible">
@@ -61,6 +61,7 @@
 
         <div id="aboutInfo">
             <h2>About Us</h2>
+            <div class="content profile">
             <dl>
                 <dt>Lauren Arthur</dt>
                 <dd>One of my favorite things to tell people is that I lived in England for 5 years. This was such a fun experience. We would 
@@ -69,13 +70,15 @@
                 Augusta, Georgia and ended up coming down to Columbus for school. Some of hobbies include graphics and design, videography 
                 and reading. I will have to admit that I also enjoy my fair share of videogaming.
                 </dd>
-
+            </div>
+            <div class="content profile">
                 <dt>Spencer Korioth</dt>
                 <dd>Born in Texas, having lived in Arizona and Wisconsin, and now living in Georgia, I am a student studying Computer Science at 
                 Columbus State University. While I am studying computer programming, I also have an interest in foreign language and literature. 
                 Naturally, as a Computer Science student, I also enjoy video games and am currently looking forward to playing CD Projekt's Cyberpunk 2077.
                 </dd>
-
+            </div>
+            <div class="content">
                 <dt>Kyle Martinolich</dt>
                 <dd>I live in Columbus, Georgia and am in the Applied Computing track of Computer Science at Columbus State. Outside of schoolwork,
                 I spend my time working part-time as a server on the weekends at Johnny's Pizza, as well as working as a part-time Co-Op for Aflac's
@@ -83,6 +86,7 @@
                 and baseball are my favorite hobbies, both playing for real and playing them as video games.
               </dd>
             </dl>
+            </div>
         </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

@@ -45,7 +45,15 @@ a {color: rgb(201, 130, 110);}
 }
 
 .searchResult, #aboutInfo {margin: 2em;}
-#aboutInfo dt {font-size: large;}
+#aboutInfo dt
+{
+    font-size: large;
+    background-color: rgb(201, 130, 110);
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border-radius: 1em;
+    padding-left: .5em;
+}
 
 #aboutInfo dd
 {
@@ -53,17 +61,33 @@ a {color: rgb(201, 130, 110);}
     text-indent: 2em;
 }
 
+#cboard
+{
+    display: block;
+    margin: auto;
+    max-width: 10em;
+    padding-top: 2em;
+}
+
+.content
+{
+    background-color: #f2f2f2;
+    border-radius: 1em;
+    padding: 1em;
+}
+
 h3 {margin-top: .5em;}
 .card
 {
-    width: 22em;
+    width: 21em;
     height: 32em;
     padding: 1em;
     margin: .5em;
     border-radius: 25px;
-    border: .2em solid tan;
+    border: .2em solid rgb(201, 130, 110);
     overflow: auto;
 }
+.profile{margin-bottom: 1em;}
 
 .sentMessage{
     margin-left: 3em;
