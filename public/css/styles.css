@@ -45,6 +45,7 @@ a {color: rgb(201, 130, 110);}
 }
 
 .searchResult, #aboutInfo {margin: 2em;}
+.form-control {margin-bottom: 1em;}
 #aboutInfo dt
 {
     font-size: large;

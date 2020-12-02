@@ -39,7 +39,7 @@
             <h1 class="display-4">TV Shows</h1>
             <p class="lead">TV Show Search Page</p>
             <p><div class="input-group mb-3">
-                    <form action ="/TVsearch" method="POST"> 
+                    <form class="content" action ="/TVsearch" method="POST"> 
                     <input type="text" class="form-control" name="TVsearch" placeholder="Search for a TV Show" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
@@ -47,8 +47,9 @@
                 </div>
             </p>
         </div>
+        <%if(searchtv != ""){%>
         <hr class="my-4">
-
+        <%}%>
         <div class="searchResult">
         <%if(searchtv != ""){%>
         <h2> Showing search results for: <%= searchtv %></h2>

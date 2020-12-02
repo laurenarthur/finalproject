@@ -40,7 +40,7 @@
             <h1 class="display-4">Movies</h1>
             <p class="lead">Movie Search Page</p>
             <p><div class="input-group mb-3">
-                    <form action ="/searchMovie" method="POST">
+                    <form class="content" action ="/searchMovie" method="POST">
                     <input type="text" class="form-control" name="movieSearch" placeholder="Search for a Movie" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
@@ -49,8 +49,9 @@
                 </div>
             </p> 
         </div>
+        <%if(search != ""){%>
         <hr class="my-4">
-
+        <%}%>
         <div class="searchResult">
         <%if(search != ""){%>
         <h2> Showing search results for: <%= search %></h2>
